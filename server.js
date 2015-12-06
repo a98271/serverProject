@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-var mongodbURL = 'mongodb://localhost:27017/test';
+var mongodbURL = 'mongodb://ggg:ggg@ds059284.mongolab.com:59284/primer-dataset';
 var mongoose = require('mongoose');
 
 app.post('/',function(req,res) {
@@ -45,7 +45,7 @@ app.post('/',function(req,res) {
 
 app.delete('/restaurant_id/:id',function(req,res) {
 	var restaurantSchema = require('./models/restaurant');
-	mongoose.connect('mongodb://localhost/test');
+	mongoose.connect('mongodb://ggg:ggg@ds059284.mongolab.com:59284/primer-dataset');
 	var db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error:'));
 	db.once('open', function (callback) {
@@ -61,7 +61,6 @@ app.delete('/restaurant_id/:id',function(req,res) {
     	});
     });
 });
-
 app.get('/restaurant_id/:id', function(req,res) {
 	var restaurantSchema = require('./models/restaurant');
 	mongoose.connect('mongodb://localhost/test');
@@ -116,7 +115,7 @@ app.get('/:field/:id', function(req,res) {
 app.put('/restaurant_id/:id/grade', function(req,res) {
 	
 	var restaurantSchema = require('./models/restaurant');
-	mongoose.connect('mongodb://localhost/test');
+	mongoose.connect('mongodb://ggg:ggg@ds059284.mongolab.com:59284/primer-dataset');
 	var db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error:'));
 	db.once('open', function (callback) {
@@ -137,7 +136,7 @@ app.put('/restaurant_id/:id/grade', function(req,res) {
 app.put('/restaurant_id/:id/set/grade', function(req,res) {
 	
 	var restaurantSchema = require('./models/restaurant');
-	mongoose.connect('mongodb://localhost/test');
+	mongoose.connect('mongodb://ggg:ggg@ds059284.mongolab.com:59284/primer-dataset');
 	var db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error:'));
 	db.once('open', function (callback) {
@@ -159,7 +158,7 @@ app.put('/restaurant_id/:id/set/grade', function(req,res) {
 app.put('/restaurant_id/:id/set/:field/:item', function(req,res) {
 	
 	var restaurantSchema = require('./models/restaurant');
-	mongoose.connect('mongodb://localhost/test');
+	mongoose.connect('mongodb://ggg:ggg@ds059284.mongolab.com:59284/primer-dataset');
 	var db = mongoose.connection;
 	var field = req.params.field;
 	var item = req.params.item;
@@ -203,7 +202,7 @@ app.put('/restaurant_id/:id/set/address', function(req,res) {
 	console.log(criteria);
 
 	var restaurantSchema = require('./models/restaurant');
-	mongoose.connect('mongodb://localhost/test');
+	mongoose.connect('mongodb://ggg:ggg@ds059284.mongolab.com:59284/primer-dataset');
 	var db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error:'));
 	db.once('open', function (callback) {
@@ -247,7 +246,7 @@ app.put('/restaurant_id/:id/multipleset', function(req,res) {
 	console.log(criteria);
 
 	var restaurantSchema = require('./models/restaurant');
-	mongoose.connect('mongodb://localhost/test');
+	mongoose.connect('mongodb://ggg:ggg@ds059284.mongolab.com:59284/primer-dataset');
 	var db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error:'));
 	db.once('open', function (callback) {
@@ -270,7 +269,3 @@ app.put('/restaurant_id/:id/multipleset', function(req,res) {
 
 
 app.listen(process.env.PORT || 8099);
-
-
-
-

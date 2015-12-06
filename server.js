@@ -11,7 +11,7 @@ var mongoose = require('mongoose');
 app.post('/',function(req,res) {
 	//console.log(req.body);
 	var restaurantSchema = require('./models/restaurant');
-	mongoose.connect('mongodb://localhost/test');
+	mongoose.connect('mongodb://ggg:ggg@ds059284.mongolab.com:59284/primer-dataset');
 	var db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error:'));
 	db.once('open', function (callback) {
@@ -63,7 +63,7 @@ app.delete('/restaurant_id/:id',function(req,res) {
 });
 app.get('/restaurant_id/:id', function(req,res) {
 	var restaurantSchema = require('./models/restaurant');
-	mongoose.connect('mongodb://localhost/test');
+	mongoose.connect('mongodb://ggg:ggg@ds059284.mongolab.com:59284/primer-dataset');
 	var db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error:'));
 	db.once('open', function (callback) {
@@ -87,7 +87,7 @@ app.get('/restaurant_id/:id', function(req,res) {
 
 app.get('/:field/:id', function(req,res) {
 	var restaurantSchema = require('./models/restaurant');
-	mongoose.connect('mongodb://localhost/test');
+	mongoose.connect('mongodb://ggg:ggg@ds059284.mongolab.com:59284/primer-dataset');
 	var db = mongoose.connection;
 	var field = req.params.field;
 	var id = req.params.id;
